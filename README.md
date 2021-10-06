@@ -1,6 +1,6 @@
 # Hafele.pl web scraper
 
-###Authorization
+### Authorization
 Store your credentials in the `.env` file:
 ```
 HAFELE_USER=XXXXXX

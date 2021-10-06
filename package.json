@@ -1,0 +1,20 @@
+{
+  "name": "hafele-scraper",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Web scraper for hafele.pl",
+  "main": "index.js",
+  "author": "Adam Horodyski",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node -r dotenv/config index.js"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "playwright": "^1.15.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1"
+  }
+}

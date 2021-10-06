@@ -1,0 +1,7 @@
+.idea
+node_modules
+yarn.lock
+package-lock.json
+.env
+out.json
+products.json

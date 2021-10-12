@@ -1,17 +1,9 @@
 # Hafele.pl web scraper
 
 ### Motivation
-
 **hafele.pl** makes it hard to get the information on the maximum quantity of a product you can order at a time.
 
 This scraper simplifies this process to passing the product's URL.
-
-### Authorization
-Store your credentials in the `.env` file:
-```
-HAFELE_USER=XXXXXX
-HAFELE_PASS=XXXXXX
-```
 
 ### Workflow
 App requires a `products.json` (in the root directory) as an input array of urls.
@@ -41,12 +33,23 @@ Each item in this array of products consists of the fields listed below:
 
 ---
 
-Install
+### Getting started
+###### Authorization
+Store your credentials in the `.env` file:
+```
+HAFELE_USER=XXXXXX
+HAFELE_PASS=XXXXXX
+```
+
+###### Data
+Fill in the `products.json` file in the root directory with all the products' URLs you want to scrap from.
+
+###### Install
 ```
 npm install
 ```
 
-Run
+###### Run
 ```
 npm start
 ```

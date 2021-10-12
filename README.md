@@ -1,5 +1,11 @@
 # Hafele.pl web scraper
 
+### Motivation
+
+**hafele.pl** makes it hard to get the information on the maximum quantity of a product you can order at a time.
+
+This scraper simplifies this process to passing the product's URL.
+
 ### Authorization
 Store your credentials in the `.env` file:
 ```
@@ -9,6 +15,7 @@ HAFELE_PASS=XXXXXX
 
 ### Workflow
 App requires a `products.json` (in the root directory) as an input array of urls.
+
 It outputs the `out.json` file like this:
 
 ```
@@ -25,6 +32,12 @@ It outputs the `out.json` file like this:
   }
 ]
 ```
+
+Each item in this array of products consists of the fields listed below:
+
+- **url**: link to the crawled product
+- **qty**: maximum available quantity
+- **thumbnails**: array of thumbnails
 
 ---
 

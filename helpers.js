@@ -1,6 +1,6 @@
 import * as fs from "fs";
 
-export const getProductsUrls = () => {
+export const getProductsIds = () => {
   try {
     return JSON.parse(fs.readFileSync("products.json", "utf-8"));
   } catch (err) {
@@ -34,6 +34,14 @@ export class Hafele {
     await page.click('button[type="submit"]');
     await page.waitForSelector("#header-loggedin-link");
     console.log(`Authenticated as user: ${process.env.HAFELE_USER}`);
+  }
+
+  static async goToProduct(page, id) {
+    const search = await page.$("#inputSearchTerm");
+    await search.type(id);
+    await search.press("Enter");
+
+    return page.url();
   }
 
   static async setProductQuantity(page, qty = "99999") {

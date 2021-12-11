@@ -1,5 +1,5 @@
 import { chromium } from "playwright";
-import { Hafele, getProductsUrls, productsToJson } from "./helpers.js";
+import { Hafele, getProductsIds, productsToJson } from "./helpers.js";
 
 (async () => {
   const products = [];
@@ -11,20 +11,21 @@ import { Hafele, getProductsUrls, productsToJson } from "./helpers.js";
   await Hafele.acceptCookies(page);
   await Hafele.authenticate(page);
 
-  for (const url of getProductsUrls()) {
+  for (const id of getProductsIds()) {
     try {
-      await page.goto(url);
+      const url = await Hafele.goToProduct(page, id);
       await Hafele.setProductQuantity(page);
 
       products.push({
+        id,
         url,
         qty: await Hafele.getProductAvailability(page),
         thumbnails: await Hafele.getProductThumbnails(page),
       });
 
-      console.log(`✅ ${url}`);
+      console.log(`✅ ${id}`);
     } catch (e) {
-      console.log(`❌ ${url}`);
+      console.log(`❌ ${id}`);
       console.error(e);
     }
   }

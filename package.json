@@ -1,18 +1,19 @@
 {
-  "name": "hafele-scraper",
+  "name": "haefele-switzerland-scraper",
   "version": "1.0.0",
   "type": "module",
-  "description": "Web scraper for hafele.pl",
+  "description": "Web scraper for haefele.ch",
   "main": "index.js",
-  "author": "Adam Horodyski",
+  "author": "LooxFoox",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node -r dotenv/config index.js"
+    "start": "node -r dotenv/config index.js",
+    "postinstall": "playwright install"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
-    "playwright": "^1.15.1"
+    "playwright": "^1.55.0"
   },
   "devDependencies": {
     "prettier": "^2.4.1"
